@@ -51,9 +51,7 @@ class QuestionsController extends Controller
     public function show(Question $question)
     {
         $question->increment('views');
-        // Below can be written in one line
-        // $question->views = $question->views + 1;
-        // $question->save();
+        
         return view('questions.show', compact('question'));
     }
 
@@ -65,7 +63,12 @@ class QuestionsController extends Controller
      */
     public function edit(Question $question)
     {
-        return view('questions.edit', compact('question'));
+        if (\Gate::allows('update-question', $question))
+        {
+            return view('questions.edit', compact('question'));
+        }
+
+        abort(403, "Access Denied");
     }
 
     /**
