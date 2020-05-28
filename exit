@@ -1,0 +1,18 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch miscellaneous
+# Changes to be committed:
+#	modified:   app/Providers/RouteServiceProvider.php
+#	modified:   app/Question.php
+#	modified:   resources/views/answers/_index.blade.php
+#	modified:   resources/views/questions/index.blade.php
+#	modified:   routes/web.php
+#
+-display all questions in root route
+-hide the answer's controller when no record
+-show an alert when question record empty
+
+
+
